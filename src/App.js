@@ -1,25 +1,33 @@
-import logo from './logo.svg';
 import './App.css';
+import {useState} from "react";
+import PostList from "./component/postList";
+import Btt from "./component/UI/Button/Btt";
 
-function App() {
-  return (
+
+const App = () => {
+
+   const [post, setPost] = useState([
+       {id: 1, title: 'javaScript 3', body: 'Description' },
+       {id: 2, title: 'javaScript 3', body: 'Description' },
+       {id: 3, title: 'javaScript 3', body: 'Description' },
+   ])
+
+
+
+    return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <form>
+            <input type="text" placeholder='Название поста'/>
+            <input type="text" placeholder='Описние поста'/>
+            <Btt>Добавить пост</Btt>
+        </form>
+            <PostList post={post} title='Пост js'/>
     </div>
-  );
+    )
 }
 
-export default App;
+export default  App;
+
+
+
+
