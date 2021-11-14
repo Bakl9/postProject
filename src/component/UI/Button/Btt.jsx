@@ -4,7 +4,7 @@ import s from './Bttn.module.css'
 const Btt = (props) => {
     return (
         <button className={s.btt}>
-            {props.children}
+            {props.children }
         </button>
     );
 };
