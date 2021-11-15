@@ -2,6 +2,7 @@ import './App.css';
 import {useState} from "react";
 import PostList from "./component/postList";
 import Btt from "./component/UI/Button/Btt";
+import MyInput from "./component/UI/Input/MyInput";
 
 
 const App = () => {
@@ -17,11 +18,11 @@ const App = () => {
     return (
     <div className="App">
         <form>
-            <input type="text" placeholder='Название поста'/>
-            <input type="text" placeholder='Описние поста'/>
+            <MyInput type="text" placeholder='Название поста'/>
+            <MyInput type="text" placeholder='Описние поста'/>
             <Btt>Добавить пост</Btt>
         </form>
-            <PostList post={post} title='Пост js'/>
+            <PostList post={post} title='Пост про JavaScript'/>
     </div>
     )
 }

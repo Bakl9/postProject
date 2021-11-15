@@ -1,10 +1,10 @@
 import React from 'react';
 import s from './Bttn.module.css'
 
-const Btt = (props) => {
+const Btt = ({children, ...props}) => {
     return (
-        <button className={s.btt}>
-            {props.children }
+        <button {...props} className={s.btt}>
+            {children}
         </button>
     );
 };
