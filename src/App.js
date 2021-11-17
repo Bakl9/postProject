@@ -1,9 +1,14 @@
 import './App.css';
-import {useState} from "react";
+import {useRef, useState} from "react";
 import PostList from "./component/postList";
-import Btt from "./component/UI/Button/Btt";
-import MyInput from "./component/UI/Input/MyInput";
+import Button from "./component/UI/Button/button";
+import Input from "./component/UI/Input/Input";
 
+
+
+function MyInput() {
+    return null;
+}
 
 const App = () => {
 
@@ -13,23 +18,24 @@ const App = () => {
        {id: 3, title: 'javaScript 3', body: 'Description' },
    ])
 
-    const [title, setTitle] = useState('')
+    const [title, setTitle] = useState('000')
 
-    const addPost = (e) => {
-        e.preventDefault()
+    const addNewPost = (e) => {
+       e.preventDefault()
         console.log(title)
     }
 
     return (
     <div className="App">
         <form>
-            <MyInput
-                    onChange={e => setTitle(e.target.value)}
-                     value={title}
-                     type="text"
-                     placeholder='Название поста'/>
-            <MyInput type="text" placeholder='Описние поста'/>
-            <Btt onClick={addPost} >Добавить пост</Btt>
+            <Input
+                onInput={e => setTitle(e.target.value)}
+                type='text'
+                value={title}
+                placeholder={'asa'}
+            />
+            <Input/>
+            <Button onClick={addNewPost} disablet>добавить</Button>
         </form>
             <PostList post={post} title='Пост про JavaScript'/>
     </div>
